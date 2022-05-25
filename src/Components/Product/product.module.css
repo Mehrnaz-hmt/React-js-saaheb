@@ -1,0 +1,62 @@
+.product {
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 10px 80px rgba(0, 0, 0, 0.065);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  /* margin-top: 15px; */
+  margin: 50px;
+}
+
+p{
+  font-size: large;
+  margin: 15px;
+}
+
+.button {
+  padding: 5px 10px;
+  background-color: lightcyan;
+  color: blueviolet;
+  border: 1px solid #c7d2fe;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: large;
+}
+
+.inc {
+  background-color: #c7d2fe;
+}
+
+.value {
+  background-color: #c7d2fe;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  font-size: 14px;
+}
+
+
+.input {
+  outline:none;
+  border: 1px solid #6d28d9;
+  border-radius: 5px;
+  padding: 5px 2px;
+  color: #6d28d9;
+  width: 150px;
+  height: 50px;
+  margin: 8px;
+}
+
+.input:focus {
+  border: 2px solid #6d28d9;
+  background-color: rgb(225, 235, 238);
+}
