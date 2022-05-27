@@ -31,7 +31,8 @@ export default function Product(props) {
 
       <button
         onClick={props.onDecrement}
-        className={`${style.button} ${props.product.quantity ==1 ? style.remove : null}`}
+        // className={`${style.button} ${props.product.quantity ==1 ? style.remove : null}`} //first approach
+        className={`${style.button} ${props.product.quantity == 1 && style.remove }`} //second approach
       >
       
         {props.product.quantity > 1 ? "-" : <BiTrash />}
