@@ -51,34 +51,21 @@ export default class ProductList extends Component {
   renderProduct = () => {
     if (this.state.products.length === 0)
       return <div className="empty">There is no products in your cart!</div>;
-    return (
-      <div>
-        {this.state.products.map((product, index) => {
-          return (
-            <Product
-              key={index}
-              product={product}
-              onDelete={() => this.removeHandler(product.id)}
-              onIncrement={() => this.incrementHandler(product.id)}
-              onChange={(e) => this.changeHandlere(e, product.id)}
-              onDecrement={() => this.decrementHandler(product.id)}
-            />
-          );
-        })}
-      </div>
-    );
+    return this.state.products.map((product, index) => {
+      return (
+        <Product
+          key={index}
+          product={product}
+          onDelete={() => this.removeHandler(product.id)}
+          onIncrement={() => this.incrementHandler(product.id)}
+          onChange={(e) => this.changeHandlere(e, product.id)}
+          onDecrement={() => this.decrementHandler(product.id)}
+        />
+      );
+    });
   };
 
   render() {
-    return (
-      <div>
-        {!this.state.products.length ? (
-          <div>Go to shopping </div>
-        ) : (
-          <div> welcome back!</div>
-        )}
-        {this.state.renderProduct()}
-      </div>
-    );
+    return <div>{this.renderProduct()}</div>;
   }
 }
