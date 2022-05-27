@@ -60,3 +60,8 @@ p{
   border: 2px solid #6d28d9;
   background-color: rgb(225, 235, 238);
 }
+
+.remove {
+  color: red;
+  border: 1px solid red;
+}
