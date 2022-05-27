@@ -70,6 +70,15 @@ export default class ProductList extends Component {
   };
 
   render() {
-    return <div>{this.renderProduct()}</div>;
+    return (
+      <div>
+        {!this.state.products.length ? (
+          <div>Go to shopping </div>
+        ) : (
+          <div> welcome back!</div>
+        )}
+        {this.state.renderProduct()}
+      </div>
+    );
   }
 }
