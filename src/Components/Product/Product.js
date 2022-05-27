@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import style from "./product.module.css";
+import { BiTrash } from "react-icons/bi";
 
 export default function Product(props) {
   const [userName,setUsername] = useState("")
@@ -26,7 +27,7 @@ export default function Product(props) {
       />
         
       <button onClick={props.onDecrement} className={`${style.button} ${style.inc}`}>
-       -
+       {props.product.quantity > 1 ? "-" : <BiTrash/>}
       </button>
       <button
         onClick={props.onIncrement}
