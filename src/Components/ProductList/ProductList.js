@@ -68,11 +68,14 @@ export default class ProductList extends Component {
   render() {
     return (
       <div>
-        {!this.state.products.length ? (
+        {/* {!this.state.products.length ? ( //length == 0 => !falsy == truthy length == 2 !truthy == falsy  
           <div>Go to shopping!</div>
         ) : (
           <div>Welcome back!</div>
-        )}
+        )} */}
+        {!this.state.products.length && 
+        <div>Go to shopping!</div>
+        }
         {this.renderProduct()}
       </div>
     );
