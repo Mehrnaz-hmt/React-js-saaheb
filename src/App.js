@@ -23,11 +23,17 @@ export class App extends Component {
   };
 
   incrementHandler = (id) => {
-    // console.log("first",id);
+    //1. id ==> ok
+    //2. index
+    const index = this.state.products.findIndex((item) => item.id === id)
+    console.log(index)
+    //3.Clone the selected index and update the quantity:
+    const product = {...this.state.products[index]};
+    product.quantity++;
+    //4. update products:
     const products = [...this.state.products];
-    const selectedItem = products.find((p) => p.id === id);
-    selectedItem.quantity++;
-    this.setState({ products });
+    products[index] = product;
+    this.setState({products})
   };
 
   changeHandlere = (event, id) => {
@@ -59,10 +65,12 @@ export class App extends Component {
    }
    componentDidUpdate(prevProps,prevState) {
     console.log("App.js componentDidUpdate()")
+    console.log("App.js",prevState)
    }
   render() {
     console.log("App.js render()")
     return (
+     
       <div className="container" id="title">
         <Navbar totalItems={this.state.products.filter((p) => p.quantity > 0).length} />
         <ProductList
