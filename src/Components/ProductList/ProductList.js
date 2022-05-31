@@ -6,7 +6,8 @@ import style from "./productList-module.css";
 export default class ProductList extends Component {
 
   shouldComponentUpdate(nextProps, nextState) { 
-    return true //when we want to update a component return true.When we don't want return false
+    return true 
+    //when we want to update a component return true.When we don't want return false
   }
 
   renderProduct = () => {
