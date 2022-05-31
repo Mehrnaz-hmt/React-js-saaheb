@@ -3,6 +3,10 @@ import React, { Component } from "react";
 import ProductList from "./Components/ProductList/ProductList";
 import Navbar from "./Components/Navbar/Navbar";
 export class App extends Component {
+  constructor (props) {
+    super (props) 
+    console.log("App.js constructor")
+  }
   state = {
     products: [
       { title: "React.js", price: "90$", id: 1, quantity: 1 },
@@ -48,7 +52,16 @@ export class App extends Component {
     }
   };
 
+  componentDidMount() { 
+    console.log("App.js componentDidMount() ")
+    //Ajax : 
+    // Products => this.setState({Products...})
+   }
+   componentDidUpdate(prevProps,prevState) {
+    console.log("App.js componentDidUpdate()")
+   }
   render() {
+    console.log("App.js render()")
     return (
       <div className="container" id="title">
         <Navbar totalItems={this.state.products.filter((p) => p.quantity > 0).length} />

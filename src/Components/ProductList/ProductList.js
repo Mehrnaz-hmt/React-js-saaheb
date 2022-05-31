@@ -4,9 +4,15 @@ import Product from "../Product/Product";
 import style from "./productList-module.css";
 
 export default class ProductList extends Component {
- 
+
+  shouldComponentUpdate(nextProps, nextState) { 
+    return true //when we want to update a component return true.When we don't want return false
+  }
+
   renderProduct = () => {
-     const {products,onChange,onDecrement,onIncrement,onRemove} = this.props;
+    const { products, onChange, onDecrement, onIncrement, onRemove } =
+      this.props;
+
     if (products.length === 0)
       return <div className="empty">There is no products in your cart!</div>;
     return products.map((product, index) => {
@@ -23,7 +29,12 @@ export default class ProductList extends Component {
     });
   };
 
+
+  componentDidMount() {
+    console.log("ProductList.js componentDidMount()");
+  }
   render() {
+    console.log("ProductList.js render()");
     return (
       <div>
         {/* {!this.state.products.length ? ( //length == 0 => !falsy == truthy length == 2 !truthy == falsy  

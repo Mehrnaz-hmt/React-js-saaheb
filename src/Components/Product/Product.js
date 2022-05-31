@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import style from "./product.module.css";
 import { BiTrash } from "react-icons/bi";
 
+
 export default function Product({product,onChange,onDecrement,onDelete,onIncrement,children}) {
+  console.log("Product.js render()")
   const [userName, setUsername] = useState("");
 
   const changeHandler = (e) => {
     setUsername(e.target.value);
   };
 
+  
   return (
     <div className={style.product} onClick={product.click}>
       <input
