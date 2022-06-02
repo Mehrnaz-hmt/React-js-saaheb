@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./product.module.css";
 import { BiTrash } from "react-icons/bi";
 
@@ -16,6 +16,16 @@ export default function Product({
   const changeHandler = (e) => {
     setUsername(e.target.value);
   };
+
+  // useEffect(() => {
+  //   console.log("Product.js componentDidMount()")
+  // },[])
+
+  // useEffect(() => {
+  //   return () => {
+  //     console.log("Product.js inside clean-up componentWillUnMount()")
+  //   }
+  // },[])
 
   return (
     <div className={style.product} onClick={product.click}>
