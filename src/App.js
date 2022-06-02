@@ -37,25 +37,26 @@ export class App extends Component {
   };
 
   changeHandlere = (event, id) => {
-    const products = [...this.state.products];
-    const selectedItem = products.find((p) => p.id === id);
-    selectedItem.title = event.target.value;
+    const index = this.state.products.findIndex(item => item.id === id); //1. found index
+    const product = {...this.state.products[index]}  //2. we found product //obj
+    product.title = event.target.value;
+    const products = [...this.state.products]
+    products[index] = product
     this.setState({ products: products });
-    // console.log(products)
-    // console.log(event.target.value, id);
   };
 
   decrementHandler = (id) => {
+    const index = this.state.products.findIndex(item => item.id === id);
+    const product = {...this.state.products[index]} 
+    product.quantity--;
     const products = [...this.state.products];
-    const selectedItem = products.find((p) => p.id === id);
-    selectedItem.quantity--;
-    if (selectedItem.quantity <= 0) {
-      const filteredProduct = this.state.products.filter((p) => p.id !== id);
-
-      this.setState({ products: filteredProduct });
+    products[index] = product;
+    if (product.quantity <= 0) {
+      const filteredProduct = this.state.products.filter(p => p.id !== id);
+      this.setState({products:filteredProduct})
     } else {
-      this.setState({ products });
-    }
+      this.setState({products})
+    }    
   };
 
   componentDidMount() { 
