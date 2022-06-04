@@ -2,6 +2,8 @@
 import React, { Component } from "react";
 import ProductList from "./Components/ProductList/ProductList";
 import Navbar from "./Components/Navbar/Navbar";
+import ClassCounter from './Components/ClassCounter';
+import FunctionalCounter from './Components/FunctionalCounter';
 export class App extends Component {
   constructor (props) {
     super (props) 
@@ -81,6 +83,7 @@ export class App extends Component {
           onChange={this.changeHandlere}
           onDecrement={this.decrementHandler}
         />
+        <FunctionalCounter/>
       </div>
     );
   }
