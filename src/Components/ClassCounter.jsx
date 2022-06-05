@@ -12,13 +12,14 @@ export default class ClassCounter extends Component {
   componentDidMount() {
     document.title = `clicked : ${this.state.count} times `;
   }
-  componentDidUpdate(prevProps, prevState) { 
+  componentDidUpdate(prevProps, prevState) {
     //based on count state changes
-   if(prevState.count !== this.state.count) {
-    console.log("Document title updating")
-    document.title = `clicked : ${this.state.count} times `;
-   }
-  } 
+    if (prevState.count !== this.state.count) {
+      console.log("Document title updating");
+      document.title = `clicked : ${this.state.count} times `;
+    }
+  }
+ 
   render() {
     return (
       <div>

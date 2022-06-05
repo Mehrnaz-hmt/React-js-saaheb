@@ -4,6 +4,9 @@ import ProductList from "./Components/ProductList/ProductList";
 import Navbar from "./Components/Navbar/Navbar";
 import ClassCounter from './Components/ClassCounter';
 import FunctionalCounter from './Components/FunctionalCounter';
+import ClassTimer from "./Components/ClassTimer";
+import style from './index.css'
+import FunctionTimer from './Components/FunctionTimer';
 export class App extends Component {
   constructor (props) {
     super (props) 
@@ -15,6 +18,7 @@ export class App extends Component {
       { title: "NodeJs", price: "70$", id: 2, quantity: 5 },
       { title: "React.js", price: "80$", id: 3, quantity: 9 },
     ],
+    isShow:true,
   };
 
   removeHandler = (id) => {
@@ -75,15 +79,21 @@ export class App extends Component {
     return (
      
       <div className="container" id="title">
-        <Navbar totalItems={this.state.products.filter((p) => p.quantity > 0).length} />
-        <ProductList
+        {/* <Navbar totalItems={this.state.products.filter((p) => p.quantity > 0).length} /> */}
+        {/* <ProductList
           products={this.state.products}
           onRemove={this.removeHandler}
           onIncrement={this.incrementHandler}
           onChange={this.changeHandlere}
           onDecrement={this.decrementHandler}
-        />
-        <FunctionalCounter/>
+        /> */}
+        {/* <FunctionalCounter/> */}
+        <button className={this.state.isShow ? "bgcred" : "bgcgreen"} style={{width:"55px",height:"25px"}} onClick={()=> this.setState({isShow:!this.state.isShow})}>{this.state.isShow ? "hide" : "show"}</button>
+         {/* {this.state.isShow ? <ClassTimer/> : null}  //solution 1 */}
+         {/* {console.log(this.state.isShow)} */}
+         {/* {this.state.isShow && <ClassTimer/> } */}
+         {/* <FunctionTimer/> */}
+
       </div>
     );
   }
