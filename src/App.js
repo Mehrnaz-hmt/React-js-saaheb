@@ -7,7 +7,10 @@ import FunctionalCounter from "./Components/FunctionalCounter";
 import ClassTimer from "./Components/ClassTimer";
 import style from "./index.css";
 import FunctionTimer from "./Components/FunctionTimer";
-import wrapper from "./Components/hoc/wrapper";
+import Wrapper from "./Components/hoc/Wrapper";
+
+
+
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -77,8 +80,9 @@ export class App extends Component {
   }
   render() {
     console.log("App.js render()");
+    console.log(this.props)
     return (
-      <wrapper class="container">
+      <>
         <Navbar
           totalItems={this.state.products.filter((p) => p.quantity > 0).length}
         />
@@ -90,8 +94,8 @@ export class App extends Component {
           onChange={this.changeHandlere}
           onDecrement={this.decrementHandler}
         />
-      </wrapper>
+      </>
     );
   }
 }
-export default App;
+export default Wrapper(App,"container");
