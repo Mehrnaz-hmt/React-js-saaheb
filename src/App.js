@@ -8,6 +8,8 @@ import ClassTimer from "./Components/ClassTimer";
 import style from "./index.css";
 import FunctionTimer from "./Components/FunctionTimer";
 import Wrapper from "./Components/hoc/Wrapper";
+import HoverCounter from './Components/hocExample/HoverCounter';
+import ClickCounter from './Components/hocExample/ClickCounter';
 
 
 
@@ -94,6 +96,9 @@ export class App extends Component {
           onChange={this.changeHandlere}
           onDecrement={this.decrementHandler}
         />
+        <ClickCounter/>
+        <HoverCounter/>
+    
       </>
     );
   }
