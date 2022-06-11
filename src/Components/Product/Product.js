@@ -10,7 +10,7 @@ export default function Product({
   onIncrement,
   children,
 }) {
-  console.log("Product.js render()");
+  // console.log("Product.js render()");
   const [userName, setUsername] = useState("");
 
   const changeHandler = (e) => {

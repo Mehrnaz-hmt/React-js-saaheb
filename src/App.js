@@ -10,13 +10,14 @@ import FunctionTimer from "./Components/FunctionTimer";
 import Wrapper from "./Components/hoc/Wrapper";
 import HoverCounter from './Components/hocExample/HoverCounter';
 import ClickCounter from './Components/hocExample/ClickCounter';
+import ParentComp from './Components/PureMemoComp/ParentComp';
 
 
 
 export class App extends Component {
   constructor(props) {
     super(props);
-    console.log("App.js constructor");
+    // console.log("App.js constructor");
   }
   state = {
     products: [
@@ -72,7 +73,7 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    console.log("App.js componentDidMount() ");
+    // console.log("App.js componentDidMount() ");
     //Ajax :
     // Products => this.setState({Products...})
   }
@@ -81,8 +82,8 @@ export class App extends Component {
     console.log("App.js", prevState);
   }
   render() {
-    console.log("App.js render()");
-    console.log(this.props)
+    // console.log("App.js render()");
+    // console.log(this.props)
     return (
       <>
         <Navbar
@@ -98,7 +99,9 @@ export class App extends Component {
         />
         <ClickCounter/>
         <HoverCounter/>
-    
+        <ParentComp/>
+
+
       </>
     );
   }

@@ -32,10 +32,10 @@ export default class ProductList extends Component {
 
 
   componentDidMount() {
-    console.log("ProductList.js componentDidMount()");
+    // console.log("ProductList.js componentDidMount()");
   }
   render() {
-    console.log("ProductList.js render()");
+    // console.log("ProductList.js render()");
     return (
       <div>
         {/* {!this.state.products.length ? ( //length == 0 => !falsy == truthy length == 2 !truthy == falsy  
