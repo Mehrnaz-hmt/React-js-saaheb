@@ -11,6 +11,7 @@ import Wrapper from "./Components/hoc/Wrapper";
 import HoverCounter from './Components/hocExample/HoverCounter';
 import ClickCounter from './Components/hocExample/ClickCounter';
 import ParentComp from './Components/PureMemoComp/ParentComp';
+import ClassRef from './Components/ref/ClassRef';
 
 
 
@@ -100,6 +101,8 @@ export class App extends Component {
         <ClickCounter/>
         <HoverCounter/>
         <ParentComp/>
+        <ClassRef/>
+        
 
 
       </>
