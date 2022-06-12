@@ -13,6 +13,7 @@ import ClickCounter from './Components/hocExample/ClickCounter';
 import ParentComp from './Components/PureMemoComp/ParentComp';
 import ClassRef from './Components/ref/ClassRef';
 import FunctionalRef from './Components/ref/FunctionalRef';
+import PrevStateInput from './Components/ref/PrevStateInput';
 
 
 
@@ -104,6 +105,7 @@ export class App extends Component {
         <ParentComp/>
         {/* <ClassRef/> */}
         <FunctionalRef/>
+        <PrevStateInput/>
         
 
 
