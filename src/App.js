@@ -12,6 +12,7 @@ import HoverCounter from './Components/hocExample/HoverCounter';
 import ClickCounter from './Components/hocExample/ClickCounter';
 import ParentComp from './Components/PureMemoComp/ParentComp';
 import ClassRef from './Components/ref/ClassRef';
+import FunctionalRef from './Components/ref/FunctionalRef';
 
 
 
@@ -101,7 +102,8 @@ export class App extends Component {
         <ClickCounter/>
         <HoverCounter/>
         <ParentComp/>
-        <ClassRef/>
+        {/* <ClassRef/> */}
+        <FunctionalRef/>
         
 
 
