@@ -14,6 +14,8 @@ import ParentComp from "./Components/PureMemoComp/ParentComp";
 import ClassRef from "./Components/ref/ClassRef";
 import FunctionalRef from "./Components/ref/FunctionalRef";
 import PrevStateInput from "./Components/ref/PrevStateInput";
+import  CounterProvider  from "./Components/Context/CounterProvider"
+import CounterOne from './Components/Context/CounterOne';
 
 export const UserContext = React.createContext();
 export const UserWebsite = React.createContext();
@@ -90,29 +92,28 @@ export class App extends Component {
     // console.log(this.props)
     return (
       <>
-        <UserWebsite.Provider value={"Website"}>
-          <UserContext.Provider value={"saheb"}>
-            <Navbar
-              totalItems={
-                this.state.products.filter((p) => p.quantity > 0).length
-              }
-            />
+        <CounterProvider>
+          <p>Welcome to context</p>
+          <CounterOne/>
+          
+        </CounterProvider>
+        {/* <Navbar
+          totalItems={this.state.products.filter((p) => p.quantity > 0).length}
+        /> */}
 
-            <ProductList
-              products={this.state.products}
-              onRemove={this.removeHandler}
-              onIncrement={this.incrementHandler}
-              onChange={this.changeHandlere}
-              onDecrement={this.decrementHandler}
-            />
-            <ClickCounter />
-            <HoverCounter />
-            <ParentComp />
-            {/* <ClassRef/> */}
-            <FunctionalRef />
-            <PrevStateInput />
-          </UserContext.Provider>
-        </UserWebsite.Provider>
+        {/* <ProductList
+          products={this.state.products}
+          onRemove={this.removeHandler}
+          onIncrement={this.incrementHandler}
+          onChange={this.changeHandlere}
+          onDecrement={this.decrementHandler}
+        /> */}
+        {/* <ClickCounter /> */}
+        {/* <HoverCounter /> */}
+        {/* <ParentComp /> */}
+        {/* <ClassRef/> */}
+        {/* <FunctionalRef /> */}
+        {/* <PrevStateInput /> */}
       </>
     );
   }
