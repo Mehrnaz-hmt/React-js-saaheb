@@ -9,10 +9,12 @@ export default function PrevStateInput() {
   const changeHandler = (e) => {
     setVal(e.target.value);
   };
+  
   // const resetHandler = () => {
   //   setVal("");
   //   inputRef.current.focus();
   // };
+
   useEffect(() => {
     previousValue.current = val; //does not re render or component
     console.log("useEffect ++++++++++");

@@ -8,14 +8,15 @@ import ClassTimer from "./Components/ClassTimer";
 import style from "./index.css";
 import FunctionTimer from "./Components/FunctionTimer";
 import Wrapper from "./Components/hoc/Wrapper";
-import HoverCounter from './Components/hocExample/HoverCounter';
-import ClickCounter from './Components/hocExample/ClickCounter';
-import ParentComp from './Components/PureMemoComp/ParentComp';
-import ClassRef from './Components/ref/ClassRef';
-import FunctionalRef from './Components/ref/FunctionalRef';
-import PrevStateInput from './Components/ref/PrevStateInput';
+import HoverCounter from "./Components/hocExample/HoverCounter";
+import ClickCounter from "./Components/hocExample/ClickCounter";
+import ParentComp from "./Components/PureMemoComp/ParentComp";
+import ClassRef from "./Components/ref/ClassRef";
+import FunctionalRef from "./Components/ref/FunctionalRef";
+import PrevStateInput from "./Components/ref/PrevStateInput";
 
-
+export const UserContext = React.createContext();
+export const UserWebsite = React.createContext();
 
 export class App extends Component {
   constructor(props) {
@@ -89,28 +90,31 @@ export class App extends Component {
     // console.log(this.props)
     return (
       <>
-        <Navbar
-          totalItems={this.state.products.filter((p) => p.quantity > 0).length}
-        />
+        <UserWebsite.Provider value={"Website"}>
+          <UserContext.Provider value={"saheb"}>
+            <Navbar
+              totalItems={
+                this.state.products.filter((p) => p.quantity > 0).length
+              }
+            />
 
-        <ProductList
-          products={this.state.products}
-          onRemove={this.removeHandler}
-          onIncrement={this.incrementHandler}
-          onChange={this.changeHandlere}
-          onDecrement={this.decrementHandler}
-        />
-        <ClickCounter/>
-        <HoverCounter/>
-        <ParentComp/>
-        {/* <ClassRef/> */}
-        <FunctionalRef/>
-        <PrevStateInput/>
-        
-
-
+            <ProductList
+              products={this.state.products}
+              onRemove={this.removeHandler}
+              onIncrement={this.incrementHandler}
+              onChange={this.changeHandlere}
+              onDecrement={this.decrementHandler}
+            />
+            <ClickCounter />
+            <HoverCounter />
+            <ParentComp />
+            {/* <ClassRef/> */}
+            <FunctionalRef />
+            <PrevStateInput />
+          </UserContext.Provider>
+        </UserWebsite.Provider>
       </>
     );
   }
 }
-export default Wrapper(App,"container");
+export default Wrapper(App, "container");

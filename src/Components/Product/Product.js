@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import style from "./product.module.css";
 import { BiTrash } from "react-icons/bi";
+import { UserContext, UserWebsite } from "./../../App";
 
 export default function Product({
   product,
@@ -26,6 +27,13 @@ export default function Product({
   //     console.log("Product.js inside clean-up componentWillUnMount()")
   //   }
   // },[])
+
+
+  const user = useContext(UserContext)
+  const website = useContext(UserWebsite)
+  
+  console.log(user,website)
+
 
   return (
     <div className={style.product} onClick={product.click}>
