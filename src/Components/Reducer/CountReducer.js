@@ -48,7 +48,6 @@ export default function CountReducer() {
           decrement
         </button>
       </div>
-
       <button onClick={() => dispatch({ type: "Reset" })}>Reset</button>
     </div>
   );

@@ -17,7 +17,7 @@ import PrevStateInput from "./Components/ref/PrevStateInput";
 import  CounterProvider  from "./Components/Context/CounterProvider"
 import CounterOne from './Components/Context/CounterOne';
 import CountReducer from './Components/Reducer/CountReducer';
-import ExCountReducr from './Components/Reducer/ExCountReducr';
+import ExCountReducr from './Components/Reducer/ExCountReducrTwo.js';
 
 export const UserContext = React.createContext();
 export const UserWebsite = React.createContext();
@@ -99,7 +99,7 @@ export class App extends Component {
           <CounterOne/>
           
         </CounterProvider>
-        {/* <ExCountReducr/> */}
+        <ExCountReducr/>
         <CountReducer/>
 
         {/* <Navbar
