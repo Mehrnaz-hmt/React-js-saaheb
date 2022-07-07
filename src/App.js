@@ -17,6 +17,7 @@ import PrevStateInput from "./Components/ref/PrevStateInput";
 import  CounterProvider  from "./Components/Context/CounterProvider"
 import CounterOne from './Components/Context/CounterOne';
 import CountReducer from './Components/Reducer/CountReducer';
+import ExCountReducr from './Components/Reducer/ExCountReducr';
 
 export const UserContext = React.createContext();
 export const UserWebsite = React.createContext();
@@ -98,7 +99,9 @@ export class App extends Component {
           <CounterOne/>
           
         </CounterProvider>
+        {/* <ExCountReducr/> */}
         <CountReducer/>
+
         {/* <Navbar
           totalItems={this.state.products.filter((p) => p.quantity > 0).length}
         /> */}
