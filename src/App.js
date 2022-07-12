@@ -100,6 +100,7 @@ export class App extends Component {
           
         </CounterProvider>
         <ExCountReducr/>
+        <CounterOne/>
         <CountReducer/>
 
         {/* <Navbar
