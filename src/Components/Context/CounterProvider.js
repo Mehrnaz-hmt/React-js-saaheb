@@ -33,7 +33,7 @@ export default CounterProvider;
 export const useCount = () => useContext(CounterContext);
 
 export const useCountActions = () => {
-  return useContext(CounterContextDispatcher);
+  return useContext(CounterContextDispatcher)
   // const addOne = () => {
   //   setCount((prevCount) => prevCount + 1);
   // };
