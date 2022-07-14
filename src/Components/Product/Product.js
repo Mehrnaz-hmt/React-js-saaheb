@@ -32,7 +32,7 @@ export default function Product({
   const user = useContext(UserContext)
   const website = useContext(UserWebsite)
   
-  console.log(user,website)
+  // console.log(user,website)
 
 
   return (

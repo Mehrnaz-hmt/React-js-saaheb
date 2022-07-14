@@ -2,19 +2,17 @@
 import ProductList from "./Components/ProductList/ProductList";
 import Navbar from "./Components/Navbar/Navbar";
 import Wrapper from "./Components/hoc/Wrapper";
-
 import React from "react";
 import { useState, useEffect } from "react";
-
+import ProductProvider from "./Components/Providers/ProductsProvider";
+import { useProductActions } from "./Components/Providers/ProductsProvider";
+import { useProduct } from "./Components/Providers/ProductsProvider";
 export const UserContext = React.createContext();
 export const UserWebsite = React.createContext();
 
- function App() {
-  const [products, setProducts] = useState([
-    { title: "React.js", price: "90$", id: 1, quantity: 1 },
-    { title: "NodeJs", price: "70$", id: 2, quantity: 5 },
-    { title: "React.js", price: "80$", id: 3, quantity: 9 },
-  ]);
+function App() {
+  const products = useProduct();
+  const setProducts = useProductActions();
 
   const removeHandler = (id) => {
     // console.log(`clicked ${id}`);
@@ -27,7 +25,7 @@ export const UserWebsite = React.createContext();
     //1. id ==> ok
     //2. index
     const index = products.findIndex((item) => item.id === id);
-    console.log(index);
+    // console.log(index);
     //3.Clone the selected index and update the quantity:
     const product = { ...products[index] };
     product.quantity++;
@@ -44,20 +42,20 @@ export const UserWebsite = React.createContext();
 
     const updatedProducts = [...products];
     updatedProducts[index] = product;
-    setProducts( updatedProducts );
+    setProducts(updatedProducts);
   };
 
   const decrementHandler = (id) => {
     const index = products.findIndex((item) => item.id === id);
     const product = { ...products[index] };
     if (product.quantity === 1) {
-      const filteredProducts = products.filter((p) => p.id !== id)
-      setProducts(filteredProducts)
+      const filteredProducts = products.filter((p) => p.id !== id);
+      setProducts(filteredProducts);
     } else {
       const updatedProducts = [...products];
       product.quantity--;
       updatedProducts[index] = product;
-      setProducts(updatedProducts)
+      setProducts(updatedProducts);
     }
   };
 
@@ -65,21 +63,18 @@ export const UserWebsite = React.createContext();
     console.log("App.js componentDidUpdate()");
   }, []);
 
-
   return (
-
-  <div>
-    <h2>heloo wolid</h2>
-    <Navbar totalItems={products.filter((p) => p.quantity > 0).length}/>
-    <ProductList
-      products={products}
-      onRemove={removeHandler}
-      onIncrement={incrementHandler}
-      onChange={changeHandler}
-      onDecrement={decrementHandler}
-    />
-  </div>
+    <div>
+      <ProductProvider>
+        <Navbar/>
+        <ProductList
+          onRemove={removeHandler}
+          onIncrement={incrementHandler}
+          onChange={changeHandler}
+          onDecrement={decrementHandler}
+        />
+      </ProductProvider>
+    </div>
   );
 }
-export default Wrapper(App,"Container")
-
+export default Wrapper(App, "Container");

@@ -1,21 +1,13 @@
-import { type } from "@testing-library/user-event/dist/type";
-import React, { Component } from "react";
 import Product from "../Product/Product";
-import style from "./productList-module.css";
+import { useProduct } from "../Providers/ProductsProvider";
 
-export default class ProductList extends Component {
-
-  shouldComponentUpdate(nextProps, nextState) { 
-    return true 
-    //when we want to update a component return true.When we don't want return false
-  }
-
-  renderProduct = () => {
-    const { products, onChange, onDecrement, onIncrement, onRemove } =
-      this.props;
-
+export default function ProductList(props) {
+  const products = useProduct();
+  const { onChange, onDecrement, onIncrement, onRemove } = props;
+  const renderProduct = () => {
     if (products.length === 0)
       return <div className="empty">There is no products in your cart!</div>;
+
     return products.map((product, index) => {
       return (
         <Product
@@ -29,23 +21,11 @@ export default class ProductList extends Component {
       );
     });
   };
-
-
-  componentDidMount() {
-    // console.log("ProductList.js componentDidMount()");
-  }
-  render() {
-    // console.log("ProductList.js render()");
-    return (
-      <div>
-        {/* {!this.state.products.length ? ( //length == 0 => !falsy == truthy length == 2 !truthy == falsy  
-          <div>Go to shopping!</div>
-        ) : (
-          <div>Welcome back!</div>
-        )} */}
-        {!this.props.products.length && <div>Go to shopping!</div>}
-        {this.renderProduct()}
-      </div>
-    );
-  }
+  return (
+    
+    <div>
+      {!products.length && <div>Go to shopping!</div>}
+      {renderProduct()}
+    </div>
+  );
 }
