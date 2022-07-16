@@ -22,7 +22,7 @@ p{
   color: blueviolet;
   border: 1px solid #c7d2fe;
   border-radius: 5px;
-  margin: 10px;
+  margin: 20px;
   cursor: pointer;
   font-size: large;
 }
@@ -40,7 +40,7 @@ p{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px;
+  margin: 20px;
   font-size: 14px;
 }
 

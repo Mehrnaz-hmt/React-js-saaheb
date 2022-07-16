@@ -1,9 +1,9 @@
 import React from 'react'
-import { useProduct } from '../Providers/ProductsProvider'
+import { useProducts } from '../Providers/ProductsProvider'
 import style from './navbar.module.css'
 
 export default function Navbar() {
-  const products = useProduct()
+  const products = useProducts()
   const totalItems = products.filter((p) => p.quantity > 0).length
   // console.log("Navbar.js render()")
   return (
