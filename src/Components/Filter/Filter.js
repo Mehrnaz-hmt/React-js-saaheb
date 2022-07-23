@@ -4,7 +4,8 @@ import { useState } from "react";
 
 export default function Filter() {
   const dispatch = useProductActions();
-  const [value, setValue] = useState("");6868
+  const [value, setValue] = useState("");
+  
   const changeHandler = (e) => {
      dispatch({ type: "filter", event: e });
     setValue(e.target.value)
