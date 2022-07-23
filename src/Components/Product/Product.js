@@ -15,12 +15,12 @@ export default function Product({
       <p>{`Product price: ${product.price}`}</p>
 
       <span className={style.value}>{product.quantity}</span>
-      <input
+      {/* <input
         className={style.input}
         type="text"
         onChange={onChange}
         value={product.title}
-      />
+      /> */}
 
       <button
         onClick={onDecrement}

@@ -5,9 +5,9 @@ import { useProductActions } from "./../Providers/ProductsProvider";
 export default function ProductList() {
   const products = useProducts();
 
-  const { removeHandler, incrementHandler, changeHandler, decrementHandler } =
-    useProductActions();
+  const dispatch = useProductActions();
 
+   
   const renderProduct = (props) => {
     if (products.length === 0)
       return <div className="empty">There is no products in your cart!</div>;
@@ -17,10 +17,10 @@ export default function ProductList() {
         <Product
           key={index}
           product={product}
-          onDelete={() => removeHandler(product.id)}
-          onIncrement={() => incrementHandler(product.id)}
-          onChange={(e) => changeHandler(e, product.id)}
-          onDecrement={() => decrementHandler(product.id)}
+          onDelete={() => dispatch({type:"remove",id:product.id})}
+          onIncrement={() => dispatch({type:"increment",id:product.id})}
+          onChange={(e) => dispatch({type:"edit",id:product.id, event:e})}
+          onDecrement={() => dispatch({type:"decrement",id:product.id})}
         />
       );
     });
