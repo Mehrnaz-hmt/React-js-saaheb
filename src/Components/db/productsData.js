@@ -7,7 +7,7 @@ export const productsData = [
     "price": 109.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    "available sizes":["X","XL","L","XXL"],
+    "availableSizes":["X","XL","L","XXL"],
     "rating": {
       "rate": 3.9,
       "count": 120
@@ -21,7 +21,7 @@ export const productsData = [
     "price": 109.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    "available sizes":["X","XL","L","XXL"],
+    "availableSizes":["X","XL","L","XXL","XS"],
     "rating": {
       "rate": 3.9,
       "count": 120
@@ -29,13 +29,13 @@ export const productsData = [
   },
   {
     "id": 2,
-    "sku":12389847590345783450340587,
+    "sku":1238984750340587,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "quantity":1,
     "price": 198.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    "available sizes":["L","XXL"],
+    "availableSizes":["L","XXL"],
     "rating": {
       "rate": 3.9,
       "count": 120
@@ -49,7 +49,7 @@ export const productsData = [
     "price": 109.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    "available sizes":["X","XL","L","M"],
+    "availableSizes":["X","L","M"],
     "rating": {
       "rate": 3.9,
       "count": 120
@@ -63,7 +63,7 @@ export const productsData = [
     "price": 98.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    "available sizes":["X","L","XXL"],
+    "availableSizes":["X","L","XXL"],
     "rating": {
       "rate": 3.9,
       "count": 120
@@ -77,7 +77,7 @@ export const productsData = [
     "price": 56.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    "available sizes":["M","L","XXL"],
+    "availableSizes":["M","L","XXL"],
     "rating": {
       "rate": 3.9,
       "count": 120
@@ -91,7 +91,7 @@ export const productsData = [
     "price": 19.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    "available sizes":["X","XL"],
+    "availableSizes":["X","XL"],
     "rating": {
       "rate": 3.9,
       "count": 120
@@ -105,7 +105,7 @@ export const productsData = [
     "price": 46.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    "available sizes":["X","XL"],
+    "availableSizes":["X","XL"],
     "rating": {
       "rate": 3.9,
       "count": 120

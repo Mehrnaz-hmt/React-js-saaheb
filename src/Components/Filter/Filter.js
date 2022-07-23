@@ -1,16 +1,22 @@
-import React from 'react'
-import { useProductActions } from './../Providers/ProductsProvider';
+import React from "react";
+import { useProductActions } from "./../Providers/ProductsProvider";
+import { useState } from "react";
 
 export default function Filter() {
-  const dispatch =  useProductActions()
+  const dispatch = useProductActions();
+  const [value, setValue] = useState("");6868
+  const changeHandler = (e) => {
+     dispatch({ type: "filter", event: e });
+    setValue(e.target.value)
+  };
 
   return (
     <div>
       <p>filter products based on:</p>
-        order by:
-      <select onChange={(e) => dispatch({type:"filter",event:e})}>
+      order by:
+      <select onChange={changeHandler} value={value}>
         <option value="">All</option>
-        <option value="Xs">Xs</option>
+        <option value="XS">XS</option>
         <option value="S">S</option>
         <option value="M">M</option>
         <option value="L">L</option>
@@ -18,5 +24,5 @@ export default function Filter() {
         <option value="XXL">XXL</option>
       </select>
     </div>
-  )
+  );
 }

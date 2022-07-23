@@ -1,5 +1,5 @@
 import React, { useState, useContext, useReducer } from "react";
-import {productsData} from '../db/productsData'
+import { productsData } from "../db/productsData";
 
 const ProductContext = React.createContext(); //state
 const ProductContextDispatcher = React.createContext(); //useState
@@ -44,13 +44,22 @@ const reducer = (state, action) => {
       updatedProducts[index] = product;
       return updatedProducts;
     }
-    case "filter" : {
-        console.log(action.event.target.value)
-        return state;
-    }
-    case "remove":
+
+    case "remove": {
       const filteredProducts = state.filter((p) => p.id !== action.id);
       return filteredProducts; //done!
+    }
+    case "filter": {
+      if (action.event.target.value === "") {
+        return productsData;
+      } else {
+        console.log(action.event.target.value);
+        const updatedProducts = productsData.filter(
+          (p) => p.availableSizes.indexOf(action.event.target.value) >= 0
+        );
+        return updatedProducts;
+      }
+    }
     default:
       return state;
   }
