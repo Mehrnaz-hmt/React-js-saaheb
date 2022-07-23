@@ -44,6 +44,10 @@ const reducer = (state, action) => {
       updatedProducts[index] = product;
       return updatedProducts;
     }
+    case "filter" : {
+        console.log(action.event.target.value)
+        return state;
+    }
     case "remove":
       const filteredProducts = state.filter((p) => p.id !== action.id);
       return filteredProducts; //done!
