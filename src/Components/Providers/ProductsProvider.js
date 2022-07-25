@@ -50,13 +50,15 @@ const reducer = (state, action) => {
       return filteredProducts; //done!
     }
     case "filter": {
-      if (action.event.target.value === "") {
+      const value = action.selectedOption.value ;
+      if (value === "") {
         return productsData;
       } else {
-        console.log(action.event.target.value);
+        // console.log(action.sectedOption.value);
         const updatedProducts = productsData.filter(
-          (p) => p.availableSizes.indexOf(action.event.target.value) >= 0
+          (p) => p.availableSizes.indexOf(value) >= 0
         );
+        // console.log(state)
         return updatedProducts;
       }
     }
