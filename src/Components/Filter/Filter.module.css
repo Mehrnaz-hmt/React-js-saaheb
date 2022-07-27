@@ -1,25 +1,31 @@
 .filter {
-    width: 20%; 
-    margin: 0 auto; 
-    display: flex;
-    justify-content: center; 
-   align-items: center;
-    width: 50rem;
-    margin: 20px 0;
-
+  /* width: 20%;  */
+  margin-right:10px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 50rem; */
+  margin: 20px 0;
+  /* background-color: #fff; */
 }
 .select {
-    width: 200px;
-    
+  width: 200px;
+  margin:0 45px 0 45px;
 }
 
-.selectContainer {
-    display: flex;
-    align-items: center;
+.spanTag1 {
+    margin-left:50px
+}
 
+.spanTag2 {
+    margin-right: 30px;
+}
+.selectContainer {
+  display: flex;
+  align-items: center;
 }
 
 .selectContainer span {
-    margin-right: 1rem;
-    display: block;
+  margin-right: 1rem;
+  display: block;
 }
