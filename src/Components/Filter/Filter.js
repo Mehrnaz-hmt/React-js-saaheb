@@ -63,22 +63,3 @@ export default function Filter() {
   );
 }
 
-// const myArr = [];
-// const prices = productsData.forEach((x) => myArr.push(x.price));
-// const result = myArr
-//   .sort(function (a, b) {
-//     return a - b;
-//   })
-//   .reverse();
-// console.log(result); // [198.95, 109.96, 109.95, 109, 98.95, 56.95, 46.95, 19.95]
-//  const optionsTwo = [];
-
-// console.log(optionsTwo);
-// const myLoop = (arr) => {
-//   for (let i = 0; i < arr.length; i++) {
-//     const ww = `{value: ${arr[i]}, label: ${arr[i]} }`;
-//     var res = optionsTwo.push(ww);
-//     console.log(ww);
-//   }
-// };
-// myLoop(result);
