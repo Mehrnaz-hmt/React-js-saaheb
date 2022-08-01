@@ -63,7 +63,6 @@ const reducer = (state, action) => {
     }
     case "sort": {
       const value = action.selectedOption.value;
-      console.log(value)
       const products = [...state];
       if (value === "Lowest") {
         return _.orderBy(products, ["price"], ["asc"]);

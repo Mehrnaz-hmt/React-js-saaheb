@@ -4,12 +4,14 @@ import Wrapper from "./Components/hoc/Wrapper";
 import ProductsProvider from "./Components/Providers/ProductsProvider";
 import Container from "./App.css";
 import Filter from "./Components/Filter/Filter";
-
+import Test from "./Components/Test/Test";
+import Search from './Common/Search';
 function App() {
   return (
     <div>
       <ProductsProvider>
         <Navbar />
+        <Search/>
         <Filter />
         <ProductList />
       </ProductsProvider>

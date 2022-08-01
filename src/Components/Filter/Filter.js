@@ -26,7 +26,7 @@ export default function Filter() {
   ];
 
   const changeHandler = (selectedOption) => {
-    console.log(selectedOption);
+    // console.log(selectedOption);
     dispatch({ type: "filter", selectedOption });
     dispatch({ type: "sort", selectedOption:sort });
 
@@ -34,7 +34,7 @@ export default function Filter() {
   };
 
   const sortHandler = (selectedOption) => {
-    console.log(selectedOption);
+    // console.log(selectedOption);
     dispatch({ type: "sort", selectedOption });
     setSort(selectedOption);
   };
