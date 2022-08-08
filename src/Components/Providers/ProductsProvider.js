@@ -70,6 +70,10 @@ const reducer = (state, action) => {
         return _.orderBy(products, ["price"], ["desc"]);
       }
     }
+    case "search": {
+      const value = action.selectedOption.value;
+      const allProducts = [...productsData];
+    }
     default:
       return state;
   }

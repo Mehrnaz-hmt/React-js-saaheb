@@ -4,6 +4,7 @@ import { useState } from "react";
 import Select from "react-select";
 import styles from "./Filter.module.css";
 import { productsData } from "../db/productsData";
+import SelectComponent from "../../Common/Select/Select";
 
 export default function Filter() {
   const dispatch = useProductActions();
@@ -20,18 +21,16 @@ export default function Filter() {
     { value: "XXL", label: "XXL" },
   ];
 
+  const changeHandler = (selectedOption) => {
+    dispatch({ type: "filter", selectedOption });
+    dispatch({ type: "sort", selectedOption: sort });
+    setValue(selectedOption);
+  };
+
   const sortOptions = [
     { value: "Highest", label: "Highest" },
     { value: "Lowest", label: "Lowest" },
   ];
-
-  const changeHandler = (selectedOption) => {
-    // console.log(selectedOption);
-    dispatch({ type: "filter", selectedOption });
-    dispatch({ type: "sort", selectedOption:sort });
-
-    setValue(selectedOption);
-  };
 
   const sortHandler = (selectedOption) => {
     // console.log(selectedOption);
@@ -42,24 +41,25 @@ export default function Filter() {
   return (
     <div className={styles.filter}>
       <div className={styles.selectContainer}>
-        <span className={styles.spanTag1}> <b>Order by:</b></span>
-        <Select
-          value={value}
-          onChange={changeHandler}
-          options={options}
-          className={styles.select}
+        <span className={styles.spanTag1}>
+          {" "}
+          <b>Order by:</b>
+        </span>
+        <SelectComponent
+           title="sort by size"
+           value={value}
+           onChange={changeHandler}
+           options={options}
+           className={styles.select}
         />
       </div>
-      <div className={styles.selectContainer}>
-        <span className={styles.spanTag2}><b>Sort products based on price</b></span>
-        <Select
-          value={sort}
-          onChange={sortHandler}
-          options={sortOptions}
-          className={styles.select}
-        />
-      </div>
+      <SelectComponent
+        title="sort by price"
+        value={sort}
+        onChange={sortHandler}
+        options={sortOptions}
+        className={styles.select}
+      />
     </div>
   );
 }
-
