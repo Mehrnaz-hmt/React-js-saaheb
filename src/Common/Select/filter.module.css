@@ -1,0 +1,23 @@
+
+  .select {
+    width: 200px;
+    margin:0 45px 0 45px;
+  }
+  
+  .spanTag1 {
+      margin-left:50px
+  }
+  
+  .spanTag2 {
+      margin-right: 30px;
+  }
+  .selectContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .selectContainer span {
+    margin-right: 1rem;
+    display: block;
+  }
+  
