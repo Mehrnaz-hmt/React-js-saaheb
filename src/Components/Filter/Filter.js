@@ -5,13 +5,14 @@ import Select from "react-select";
 import styles from "./Filter.module.css";
 import { productsData } from "../db/productsData";
 import SelectComponent from "../../Common/Select/Select";
+import SearchBar from './../../Common/Search/Search';
 
 export default function Filter() {
   const dispatch = useProductActions();
-  const [value, setValue] = useState("");
+  const [filter, setFilter] = useState("");
   const [sort, setSort] = useState([]);
 
-  const options = [
+  const filterOptions = [
     { value: "", label: "All" },
     { value: "XS", label: "XS" },
     { value: "S", label: "S" },
@@ -21,10 +22,10 @@ export default function Filter() {
     { value: "XXL", label: "XXL" },
   ];
 
-  const changeHandler = (selectedOption) => {
+  const filterHandler = (selectedOption) => {
     dispatch({ type: "filter", selectedOption });
     dispatch({ type: "sort", selectedOption: sort });
-    setValue(selectedOption);
+    setFilter(selectedOption);
   };
 
   const sortOptions = [
@@ -33,33 +34,36 @@ export default function Filter() {
   ];
 
   const sortHandler = (selectedOption) => {
-    // console.log(selectedOption);
     dispatch({ type: "sort", selectedOption });
     setSort(selectedOption);
   };
 
   return (
-    <div className={styles.filter}>
-      <div className={styles.selectContainer}>
-        <span className={styles.spanTag1}>
+    <section >
+        <SearchBar filter={filter}/>
+        <div className={styles.filter}> 
+            <span className={styles.spanTag1}>
           {" "}
           <b>Order by:</b>
         </span>
-        <SelectComponent
+                <SelectComponent
            title="sort by size"
-           value={value}
-           onChange={changeHandler}
-           options={options}
-           className={styles.select}
+           value={filter}
+           onChange={filterHandler}
+           options={filterOptions}
+          //  className={styles.select}
         />
-      </div>
       <SelectComponent
         title="sort by price"
         value={sort}
         onChange={sortHandler}
         options={sortOptions}
-        className={styles.select}
-      />
-    </div>
+        // className={styles.select}
+      /> 
+       </div>
+    </section>
+      
+      
+
   );
 }

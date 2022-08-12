@@ -5,13 +5,12 @@ import ProductsProvider from "./Components/Providers/ProductsProvider";
 import Container from "./App.css";
 import Filter from "./Components/Filter/Filter";
 import Test from "./Components/Test/Test";
-import Search from './Common/Search';
+import Search from './Common/Search/Search';
 function App() {
   return (
     <div>
       <ProductsProvider>
         <Navbar />
-        <Search/>
         <Filter />
         <ProductList />
       </ProductsProvider>

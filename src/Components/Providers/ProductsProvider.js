@@ -1,15 +1,9 @@
-import React, { useState, useContext, useReducer } from "react";
+import React, { useContext, useReducer } from "react";
 import { productsData } from "../db/productsData";
 import _ from "lodash";
 
 const ProductContext = React.createContext(); //state
 const ProductContextDispatcher = React.createContext(); //useState
-
-// const initialState = [
-//   { title: "React.js", price: "90$", id: 1, quantity: 1 },
-//   { title: "NodeJs", price: "70$", id: 2, quantity: 5 },
-//   { title: "React.js", price: "80$", id: 3, quantity: 9 },
-// ];
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -71,13 +65,22 @@ const reducer = (state, action) => {
       }
     }
     case "search": {
-      const value = action.selectedOption.value;
-      const allProducts = [...productsData];
+      const value = action.event.target.value;
+      if ( value === "") {
+        return state;
+      } else {
+        const filterdProducts = state.filter((item) => {
+          item.title.toLowerCase().includes(value.toLowerCase())
+        })
+        return filterdProducts;
+      }
     }
     default:
       return state;
   }
 };
+
+
 const ProductsProvider = ({ children }) => {
   const [products, dispatch] = useReducer(reducer, productsData);
   return (

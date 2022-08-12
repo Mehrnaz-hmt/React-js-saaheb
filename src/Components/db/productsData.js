@@ -2,7 +2,7 @@ export const productsData = [
   {
     "id": 1,
     "sku":12389347590345783450340587,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "title": "laptop - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "quantity":1,
     "price": 109.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
@@ -16,7 +16,7 @@ export const productsData = [
   {
     "id": 1,
     "sku":12389347590345783450340587,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "title": "phone - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "quantity":5,
     "price": 109.96,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
@@ -30,7 +30,7 @@ export const productsData = [
   {
     "id": 2,
     "sku":1238984750340587,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "title": "tv - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "quantity":10,
     "price": 198.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
@@ -44,7 +44,7 @@ export const productsData = [
   {
     "id": 3,
     "sku":12389347590345783455340587,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "title": "watch - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "quantity":4,
     "price": 109,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
@@ -58,7 +58,7 @@ export const productsData = [
   {
     "id": 4,
     "sku":1238934759032987,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "title": "airpod - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "quantity":6,
     "price": 98.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
@@ -72,7 +72,7 @@ export const productsData = [
   {
     "id": 5,
     "sku":12389341110345783450340587,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "title": "flash - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "quantity":1,
     "price": 56.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
@@ -86,7 +86,7 @@ export const productsData = [
   {
     "id": 6,
     "sku":1238934759034578399940587,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "title": "a",
     "quantity":2,
     "price": 19.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
@@ -100,7 +100,7 @@ export const productsData = [
   {
     "id": 7,
     "sku":1238934759764578399940587,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "title": "aux",
     "quantity":7,
     "price": 46.95,
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",

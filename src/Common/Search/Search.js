@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { useProductActions } from "../Components/Providers/ProductsProvider";
+import { useProductActions } from "../../Components/Providers/ProductsProvider";
 import styles from "./search.module.css";
 
-export default function Search() {
+export default function Search({filter}) {
 
   const [value, setValue] = useState("");
+  const dispatch = useProductActions()
 
-  let dispatch = useProductActions()
-
-  const changeHandler = (selectedOption) => {
-    dispatch({ type: "search", selectedOption });
-    setValue(selectedOption.value);
+  const changeHandler = (e) => {
+    dispatch({ type: "filter", selectedOption :filter });
+    dispatch({ type: "search", event: e });
+    setValue(e.target.value);
   };
 
   return (
